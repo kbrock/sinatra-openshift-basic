@@ -8,5 +8,4 @@ RUN scl enable rh-ruby23 "bundle install"
 CMD ["scl", "enable", "rh-ruby23", "./run.sh"]
 
 USER root
-RUN chmod og+rw /opt/app-root/src/db
 USER default
