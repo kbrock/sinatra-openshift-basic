@@ -1,17 +1,17 @@
-#Sinatra openshift v3 basic example
+# Sinatra openshift v3 basic example
 
 This example is tested on MacOS Sierra
-##Install minishift
+## Install minishift
 [Minishift](https://github.com/minishift/minishift)
 
-###Install xhyve
+### Install xhyve
 
 ```
 $ brew update
 $ brew install --HEAD xhyve
 ```
 
-###Install docker-machine-xhyve
+### Install docker-machine-xhyve
 
 ```
 $ brew install docker-machine-driver-xhyve
@@ -20,25 +20,25 @@ $ brew install docker-machine-driver-xhyve
 $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 ```
-###Install socat 
+### Install socat 
 
 ```
 brew install socat
 ```
 
-###Install minishift
+### Install minishift
 
 ```
 brew cask install minishift
 ```
 
-##Execute minishift 
+## Execute minishift 
 
 ```
 minishift start --deploy-router
 ```
 
-##Deploy the app
+## Deploy the app
 
 ```
 oc login --username=admin --password=admin
@@ -46,30 +46,30 @@ oc new-app https://github.com/pollosp/sinatra-openshift-basic.git
 oc expose svc/sinatra-openshift-basic
 ```
 
-##Endpoint information
+## Endpoint information
 
 ```
 oc status
 ```
 
-##Rebuild project
+## Rebuild project
 
 ```
 oc start-build sinatra-openshift-basic
 ```
 
-##Openshift console
+## Openshift console
 ```
 minishift console
 ```
 
-##Openshift IP
+## Openshift IP
 
 ```
 minishift ip
 ````
 
-#Log as developer
+# Log as developer
 ```
 oc login --username=developer --password=developer
 ```
