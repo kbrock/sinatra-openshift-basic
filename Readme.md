@@ -34,10 +34,16 @@ brew cask install minishift
 
 ## Execute minishift 
 
+With version 0.9.0
+
 ```
 minishift start --deploy-router
 ```
+With last version just 
 
+```
+minishift start --openshift-version v1.5.0-alpha.3
+```
 ## Deploy the app
 
 ```
