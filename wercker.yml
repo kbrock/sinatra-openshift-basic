@@ -1,0 +1,11 @@
+box: ruby:2.3
+dev:
+  steps:
+    # first we want to install the dependencies
+    - bundle-install
+build:
+  steps:
+    - bundle-install
+    - script:
+        name: rspec
+        code: bundle exec rspec
