@@ -1,4 +1,5 @@
 # Sinatra openshift v3 basic example
+[![wercker status](https://app.wercker.com/status/78996ad35b2627627b21efcdb2690472/s/master "wercker status")](https://app.wercker.com/project/byKey/78996ad35b2627627b21efcdb2690472)
 
 This example is tested on MacOS Sierra
 ## Install minishift
