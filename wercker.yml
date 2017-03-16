@@ -9,3 +9,12 @@ build:
     - script:
         name: rspec
         code: bundle exec rspec
+push-to-dockerhub:
+   steps:
+     - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        repository: pollosp/sinatra_openshift
+        registry: https://registry.hub.docker.com
+        tag: $WERCKER_GIT_BRANCH
+     
