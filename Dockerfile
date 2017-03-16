@@ -6,3 +6,4 @@ COPY . /opt/app-root/src/
 USER root
 RUN scl enable rh-ruby23 "bundle install"
 CMD ["scl", "enable", "rh-ruby23", "./run.sh"]
+USER root
