@@ -1,4 +1,4 @@
-box: ruby:2.3 
+box: centos/ruby-23-centos7 
 dev:
   steps:
     # first we want to install the dependencies
