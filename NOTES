@@ -1,0 +1,34 @@
+
+# notes from: https://github.com/durandom/manageiq-kafka-client#prepare-minishift-to-run-manageiq
+# ... minishift delete
+minishift config set memory 8192
+minishift config set cpus 4
+minishift config set show-libmachine-logs true
+
+minishift config view
+# - cpus                 : 4
+# - memory               : 8192
+# - show-libmachine-logs : true
+
+minishift start --vm-driver vmwarefusion
+oc login -u system:admin
+oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:default
+
+oc adm policy add-cluster-role-to-user cluster-admin developer
+oc expose service docker-registry -n default
+oc get routes -n default
+
+
+oc login -u developer -n myproject
+eval $(minishift docker-env)
+docker login -u developer -p $(oc whoami -t) $(minishift openshift registry)
+
+
+make -->
+docker push 172.30.1.1:5000/kbrock/sinatra-openshift-basic
+-----
+
+Goals:
+1. deploy locally built docker container to minishift
+2. locally build docker minishift
+3. deploy artemis to local minishift
